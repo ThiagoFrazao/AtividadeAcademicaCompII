@@ -1,17 +1,16 @@
 package entidades;
 
-import java.util.Random;
+import java.util.ArrayList;
 
 import utils.Organizador;
+import utils.RandomGenerator;
 
 public class Tabuleiro {
 	
 	private Pecas[][] mapa;
-	private Random random;
 	
 	public Tabuleiro(String corJogador, String corMaquina){
 		this.mapa = new Pecas[5][5];
-		this.random  = new Random();
 	}
 	
 	public void distribuirAleatoriamente(Organizador organizador){
@@ -19,12 +18,12 @@ public class Tabuleiro {
 		int coluna;
 		
 		while(organizador.getPecasDisponiveis().size() > 0){
-			linha = this.random.nextInt(2);
+			linha = RandomGenerator.gerarNumero(2);
 			if(organizador.getCor().equals("vermelho")){
 				//Exercito Vermelho distribui peças na linha 3 e 4
 				linha += 3;
 			}
-			coluna = this.random.nextInt(5);
+			coluna = RandomGenerator.gerarNumero(5);
 			
 			if(this.verificarPosicao(linha, coluna)){
 				Pecas novaPeca = organizador.recuperarPeca();
@@ -40,10 +39,17 @@ public class Tabuleiro {
 		}
 		return true;		
 	}
-/*	
+	
 	public static void main(String[] args) {
 		Tabuleiro tab = new Tabuleiro("vermelho","azul");
 		tab.distribuirAleatoriamente(new Organizador("azul"));
+		ArrayList<Integer> teste = new ArrayList<Integer>();
+		teste.add(10);
+		teste.add(12);
+		teste.add(13);
+		
+		System.out.println(teste.remove(0));
+		System.out.println(teste.remove(0));
 	}
-*/
+
 }

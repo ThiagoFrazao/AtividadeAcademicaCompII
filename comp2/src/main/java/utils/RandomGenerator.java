@@ -8,9 +8,7 @@ public class RandomGenerator {
 	
 	public static int gerarNumero(int limite){
 		
-		int num = random.nextInt(limite);
-		
-		return 0;
+		return random.nextInt(limite);
 	}
 
 }

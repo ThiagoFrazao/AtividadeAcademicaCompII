@@ -51,9 +51,11 @@ public class Organizador {
 	
 	public Pecas recuperarPeca(){			
 		Pecas retorno = null;
+		int posicao;
 		ArrayList<Pecas> pecasDisp = this.getPecasDisponiveis();
 		if(pecasDisp.size() > 0){
-			retorno = pecasDisp.remove(pecasDisp.size()-1);
+			posicao = RandomGenerator.gerarNumero(pecasDisp.size());
+			retorno = pecasDisp.remove(posicao);
 		}
 		this.setPecasDisponiveis(pecasDisp);
 		return retorno;		
