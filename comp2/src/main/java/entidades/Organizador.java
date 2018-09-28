@@ -1,16 +1,14 @@
-package utils;
+package entidades;
 
 import java.util.ArrayList;
 
-import entidades.Pecas;
+import utils.RandomGenerator;
 
 public class Organizador {
 	
 	private ArrayList<Pecas> pecasDisponiveis;
-	private String cor;
 	
-	public Organizador(String cor){
-		this.cor = cor;
+	public Organizador(){
 		this.pecasDisponiveis = new ArrayList<Pecas>();
 		
 		Pecas bandeira = new Pecas("bandeira",0);
@@ -67,14 +65,6 @@ public class Organizador {
 
 	public void setPecasDisponiveis(ArrayList<Pecas> pecasDisponiveis) {
 		this.pecasDisponiveis = pecasDisponiveis;
-	}
-
-	public String getCor() {
-		return cor;
-	}
-
-	public void setCor(String cor) {
-		this.cor = cor;
 	}
 	
 /*	public static void main(String[] args) {

@@ -4,6 +4,7 @@ public class Pecas {
 	
 	private String nome;
 	private int nivel;
+	boolean visivel;
 	
 	public Pecas(){
 		
@@ -12,6 +13,13 @@ public class Pecas {
 	public Pecas(String nome, int nivel){
 		this.nome = nome;
 		this.nivel = nivel;
+		this.visivel = true;
+	}
+	
+	public Pecas(String nome, int nivel, boolean visibilidade){
+		this.nome = nome;
+		this.nivel = nivel;
+		this.visivel = visibilidade;
 	}
 
 	public String getNome() {
@@ -28,6 +36,14 @@ public class Pecas {
 
 	public void setNivel(int nivel) {
 		this.nivel = nivel;
+	}
+
+	public boolean isVisivel() {
+		return visivel;
+	}
+
+	public void setVisivel(boolean visivel) {
+		this.visivel = visivel;
 	}
 
 }
