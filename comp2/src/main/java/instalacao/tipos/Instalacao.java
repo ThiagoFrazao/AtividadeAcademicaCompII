@@ -12,6 +12,7 @@ public abstract class Instalacao {
 	private Localizacao localizacao;
 	private double temperatura;
 	private Set<Animal> animaisInstalados;
+	private Set<ElementoInstalacao> elementosInstalacao;
 	
 	public Instalacao(int capacidadeMaxima, Localizacao localizacao, double temperatura) {
 		this.capacidadeMaxima = capacidadeMaxima;
