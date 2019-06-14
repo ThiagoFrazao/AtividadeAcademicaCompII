@@ -1,5 +1,3 @@
 package instalacao.tipos;
 
-public class ElementoInstalacao {
-
-}
+public abstract class ElementoInstalacao {}

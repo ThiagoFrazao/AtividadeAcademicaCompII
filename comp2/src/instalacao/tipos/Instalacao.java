@@ -18,7 +18,8 @@ public abstract class Instalacao {
 		this.capacidadeMaxima = capacidadeMaxima;
 		this.localizacao = localizacao;
 		this.temperatura = temperatura;
-		this.animaisInstalados = new HashSet<Animal>() ;
+		this.animaisInstalados = new HashSet<>() ;
+		this.elementosInstalacao = new HashSet<>();
 	}
 	public int getCapacidadeMaxima() {
 		return capacidadeMaxima;
@@ -41,9 +42,10 @@ public abstract class Instalacao {
 	public Set<Animal> getAnimaisInstalados() {
 		return animaisInstalados;
 	}
-	public boolean instalaAnimal(Animal animal){
+	public boolean instalaAnimal(Animal animal, ElementoInstalacao elementoNecessario){
 		if(this.animaisInstalados.size() < this.capacidadeMaxima){
 			this.animaisInstalados.add(animal);
+			this.elementosInstalacao.add(elementoNecessario);
 			return true;
 		} else {
 			return false;
