@@ -51,11 +51,16 @@ public abstract class Instalacao {
 		this.elementosInstalacao.add(elemento);
 	}
 	public boolean instalaAnimal(Animal animal){
+		
 		if(this.animaisInstalados.size() < this.capacidadeMaxima){
 			this.animaisInstalados.add(animal);
+			System.out.println(animal.getClass().getSimpleName() + " instalado com sucesso!");
 			return true;
 		} else {
+			System.out.println("O animal"+  animal.getClass().getSimpleName() + 
+					           " nao pode ser instalado instalacao com capacidade maxima!");
 			return false;
 		}
 	}
+	
 }
