@@ -1,21 +1,27 @@
+import animais.Baleia;
 import animais.Elefante;
 import animais.Foca;
 import animais.Leao;
 import animais.Macaco;
+import animais.PeixeBoi;
 import animais.Pinguim;
 import animais.Tartaruga;
+import animais.Tubarao;
 import animais.Zebra;
 import animais.enums.Alimento;
 import animais.enums.Porte;
 import animais.enums.Sexo;
 import instalacao.FabricaInstalacao;
 import instalacao.enums.Localizacao;
+import instalacao.tipos.InstalacaoBaleia;
 import instalacao.tipos.InstalacaoElefante;
 import instalacao.tipos.InstalacaoFoca;
 import instalacao.tipos.InstalacaoLeao;
 import instalacao.tipos.InstalacaoMacaco;
+import instalacao.tipos.InstalacaoPeixeBoi;
 import instalacao.tipos.InstalacaoPinguim;
 import instalacao.tipos.InstalacaoTartaruga;
+import instalacao.tipos.InstalacaoTubarao;
 import instalacao.tipos.InstalacaoZebra;
 
 public class Zoologico {	
@@ -56,6 +62,7 @@ public class Zoologico {
 		instalacaoZebra.instalaAnimal(zebraFemea);
 		
 		//Animais anfibios ficarao todos na Ala Leste
+		
 		Tartaruga tartarugaMacho = new Tartaruga(Sexo.MASCULINO, Porte.PEQUENO);
 		Tartaruga tartarugaFemea = new Tartaruga(Sexo.FEMININO, Porte.PEQUENO);
 		tartarugaMacho.alimentar(Alimento.FRUTAS);
@@ -79,11 +86,33 @@ public class Zoologico {
 		InstalacaoFoca instalacaoFoca = FabricaInstalacao.criarInstalacaoFoca(Localizacao.LESTE);
 		instalacaoFoca.instalaAnimal(focaMacho);
 		instalacaoFoca.instalaAnimal(focaFemea);
-	
+
+		//Animais aquatico ficarao todos na Aala Sul
 		
+		Baleia baleiaMacho = new Baleia(Sexo.MASCULINO, Porte.GRANDE);
+		Baleia baleiaFemea = new Baleia(Sexo.FEMININO, Porte.GRANDE);
+		baleiaMacho.alimentar(Alimento.PEIXES);
+		baleiaFemea.alimentar(Alimento.PEIXES);
+		InstalacaoBaleia instalacaoBaleia = FabricaInstalacao.criarInstalacaoBaleia(Localizacao.SUL);
+		instalacaoBaleia.instalaAnimal(baleiaMacho);
+		instalacaoBaleia.instalaAnimal(baleiaFemea);
 		
+		Tubarao tubaraoMacho = new Tubarao(Sexo.MASCULINO, Porte.GRANDE);
+		Tubarao tubaraoFemea = new Tubarao(Sexo.FEMININO, Porte.GRANDE);
+		tubaraoMacho.alimentar(Alimento.CARNES);
+		tubaraoMacho.alimentar(Alimento.PEIXES);
+		tubaraoFemea.alimentar(Alimento.CARNES);
+		tubaraoFemea.alimentar(Alimento.PEIXES);
+		InstalacaoTubarao instalacaoTubarao = FabricaInstalacao.criarInstalacaoTubarao(Localizacao.SUL);
+		instalacaoTubarao.instalaAnimal(tubaraoMacho);
+		instalacaoTubarao.instalaAnimal(tubaraoFemea);
 		
-		
-		
+		PeixeBoi peixeBoiMacho = new PeixeBoi(Sexo.MASCULINO, Porte.GRANDE);
+		PeixeBoi peixeBoiFemea = new PeixeBoi(Sexo.MASCULINO, Porte.GRANDE);
+		peixeBoiMacho.alimentar(Alimento.PEIXES);
+		peixeBoiFemea.alimentar(Alimento.PEIXES);
+		InstalacaoPeixeBoi instalacaoPeixeBoi = FabricaInstalacao.criarInstalacaoPeixeBoi(Localizacao.SUL);
+		instalacaoPeixeBoi.instalaAnimal(peixeBoiMacho);
+		instalacaoPeixeBoi.instalaAnimal(peixeBoiFemea);		
 	}
 }
