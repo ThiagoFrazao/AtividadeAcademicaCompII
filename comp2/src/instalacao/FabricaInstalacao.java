@@ -10,6 +10,7 @@ import instalacao.tipos.InstalacaoPeixeBoi;
 import instalacao.tipos.InstalacaoPinguim;
 import instalacao.tipos.InstalacaoTartaruga;
 import instalacao.tipos.InstalacaoTubarao;
+import instalacao.tipos.InstalacaoZebra;
 import instalacao.tipos.Jaula;
 import instalacao.tipos.Tanque;
 
@@ -73,7 +74,14 @@ public class FabricaInstalacao {
 	
 	public static InstalacaoBaleia criarInstalacaoBaleia(Localizacao localizacao) {
 		Tanque tanque = new Tanque(1000);
-		InstalacaoBaleia instalacao = new InstalacaoBaleia(19, localizacao, 2);
+		InstalacaoBaleia instalacao = new InstalacaoBaleia(2, localizacao,19);
+		instalacao.adicionaInstalacao(tanque);
+		return instalacao;
+	}
+
+	public static InstalacaoZebra criarInstalacaoZebra(Localizacao localizacao) {
+		Jaula tanque = new Jaula(20,30,25);
+		InstalacaoZebra instalacao = new InstalacaoZebra(2, localizacao, 24);
 		instalacao.adicionaInstalacao(tanque);
 		return instalacao;
 	}

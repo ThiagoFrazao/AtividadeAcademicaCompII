@@ -28,7 +28,13 @@ public abstract class AnimalAbstract implements Animal {
 
 	@Override
 	public boolean alimentar(Alimento alimento) {
-		return this.alimentosConsumiveis.contains(alimento);
+		if(this.alimentosConsumiveis.contains(alimento)) {
+			System.out.println(this.getClass().getSimpleName()+" se alimentou de " + alimento.name());
+			return true;
+		} else {
+			System.out.println(this.getClass().getSimpleName()+" não pode se alimentar de " + alimento.name());
+			return false;
+		}
 	}
 	
 	public boolean adicionarAlimento(Alimento alimento){
